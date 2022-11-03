@@ -15,6 +15,11 @@ import ooc.enums.Month;
  */
 public class Car implements CarInterface {
 
+    String Brand;
+    String Model;
+    String Color;
+    int year ;
+    
     @Override
     public Map<Month, boolean[]> createAvailability() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -65,9 +70,39 @@ public class Car implements CarInterface {
     public boolean book(Month month, int day) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public String getBrand() {
+        return Brand;
+    }
+
+    public String getModel() {
+        return Model;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setBrand(String Brand) {
+        this.Brand = Brand;
+    }
+
+    public void setModel(String Model) {
+        this.Model = Model;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
     
-    String Brand;
-    String Model;
-    String Color;
-    int year ;
+    
+    
 }
