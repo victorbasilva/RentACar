@@ -5,7 +5,7 @@
  */
 
 //author Victor Silva and Gabriel Eugenio
-package rentacar implements RentACarInterface ;
+package rentacar;
 
 // This line will give you an error until you create the needed class.
 import ooc.yoursolution.BookingSystem;
