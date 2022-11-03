@@ -21,6 +21,15 @@ public interface BookingSystemInterface {
     
     
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException;
+
+    @Override
+    public String toString();
+
+    @Override
+    public boolean equals(Object obj);
+
+    @Override
+    public int hashCode();
     
     
     
