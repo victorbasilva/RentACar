@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * This is one of the interfaces you need to implement
  */
-public interface CarInterface {
+public interface CarInterface{
     
     /**
      * This method in in charge of creating the calendar of availability 
