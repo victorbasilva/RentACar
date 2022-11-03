@@ -9,6 +9,11 @@ package ooc.yoursolution;
  *
  * @author gabrieleugenio
  */
-abstract class Car implements RentACarInterface {
+abstract class Car implements CarInterface {
+    //@Override
     
+    String Brand;
+    String Model;
+    String Color;
+    int year ;
 }
