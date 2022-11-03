@@ -11,4 +11,7 @@ package ooc.yoursolution;
  */
 abstract class RentACar implements RentACarInterface {
     
+      
+    
+    
 }

@@ -19,9 +19,9 @@ public interface BookingSystemInterface {
      * @throws IOException 
      */
     
-    //BufferedReader myFile = new BufferedReader(new FileReader(C:\Users\User\Desktop\RentACar.car_rentals.txt));
+    
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException;
     
-
+    
     
 }
