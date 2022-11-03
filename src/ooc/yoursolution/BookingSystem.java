@@ -21,16 +21,15 @@ public class BookingSystem implements BookingSystemInterface {
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); 
         
-   
-
-// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+   // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     
     public BookingSystem() throws FileNotFoundException {
         
-        /*String file = "C:\\Users\\User\\Desktop\\RentACar\\car_rentals.txt";*/
-        BufferedReader myFile = new BufferedReader(new FileReader("C:\\Users\\User\\Desktop\\RentACar\\car_rentals.txt"));
+        String file = "car_rentals.txt";
+        BufferedReader myFile = new BufferedReader(new FileReader("file"));
+        
     }
     
     
