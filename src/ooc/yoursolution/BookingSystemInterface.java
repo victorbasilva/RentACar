@@ -1,6 +1,7 @@
 package ooc.yoursolution;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -17,6 +18,10 @@ public interface BookingSystemInterface {
      * @return instance of the Rent-a-car class.
      * @throws IOException 
      */
+    
+    //BufferedReader myFile = new BufferedReader(new FileReader(C:\Users\User\Desktop\RentACar.car_rentals.txt));
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException;
+    
+
     
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-//author Victor Silva and Gabriel Eugenio
+//author Victor Silva 2021259 and Gabriel Eugenio 2021240
 package rentacar;
 
 // This line will give you an error until you create the needed class.
