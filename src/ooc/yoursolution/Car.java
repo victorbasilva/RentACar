@@ -26,7 +26,9 @@ public class Car implements CarInterface {
      * 
      * @return Map of availability
      */
+    @Override
     public Map<Month, boolean[]> createAvailability(){
+        return null;
                 
     }
     
@@ -55,7 +57,9 @@ public class Car implements CarInterface {
      * @return the make of the car
      */
     
+    @Override
     public Map<Month, boolean[]> getAvailability(){
+        return null;
         
     }
     
@@ -85,7 +89,9 @@ public class Car implements CarInterface {
      * @param day day being checked
      * @return  true or false if it is available or not
      */
+    @Override
     public boolean isAvailable(Month month, int day){
+        return false;
     
     }
     
@@ -98,7 +104,9 @@ public class Car implements CarInterface {
      * @param day date to book
      * @return true or false if the booking is completed
      */
+    @Override
     public boolean book(Month month, int day){
+        return false;
     
     }
     
