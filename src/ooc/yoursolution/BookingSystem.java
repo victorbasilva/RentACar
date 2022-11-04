@@ -28,7 +28,7 @@ public class BookingSystem implements BookingSystemInterface {
         RentACar rentACar = new RentACar(); // create a rent a car object
         rentACar.setName(line); // set name to first read line
         int numberOfCars; //Number of cars available
-        Car car = new Car(); //Constructor
+        
         List<CarInterface> cars = new ArrayList<>(); 
         
         while(line != null && !line.isEmpty()){
@@ -43,17 +43,23 @@ public class BookingSystem implements BookingSystemInterface {
               index = rest.indexOf(":");
               String rate = rest.substring(0, index);
               String number = rest.substring(index+1);
-              switch(make){
-                case "BMW": car.setMake(this.make.BMW);   
-                case "TOYOTA": car.setMake(this.make.TOYOTA);
-                case "FORD": car.setMake(this.make.FORD);
-                case "FIAT": car.setMake(this.make.FIAT);
-                case "CHEVROLET": car.setMake(this.make.CHEVROLET);
-              }
-              car.setRate(Double.parseDouble(rate));
+              
+              
               numberOfCars = Integer.parseInt(number);
-              car.setNumberOfCars(numberOfCars);
-              cars.add(car);
+              for(int i=1; i<=numberOfCars;i++){
+                  Car newCar = new Car(i);
+                  newCar.setRate(Double.parseDouble(rate));
+                  switch(make){
+                    case "BMW": newCar.setMake(this.make.BMW);   
+                    case "TOYOTA": newCar.setMake(this.make.TOYOTA);
+                    case "FORD": newCar.setMake(this.make.FORD);
+                    case "FIAT": newCar.setMake(this.make.FIAT);
+                    case "CHEVROLET": newCar.setMake(this.make.CHEVROLET);
+                  }
+                  cars.add(newCar);
+              }
+              
+              
             }
         }
         rentACar.setCars(cars);

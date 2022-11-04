@@ -15,10 +15,21 @@ public class Car implements CarInterface {
     private boolean availability;
     private Month month;
     private int day;
-    private int numberOfCars;
+    
     
     private int id;
-   /**
+
+    /**
+     * Constructor for car class used because interface is providing only
+     * get id and not set id for car.
+     * @param id 
+     */
+    public Car(int id) {
+        this.id = id;
+    }
+   
+    
+    /**
      * This method in in charge of creating the calendar of availability 
      * of the car for the whole year. 
      * The calendar should be a Map that uses the Month as the key, 
@@ -32,22 +43,22 @@ public class Car implements CarInterface {
                 
     }
     
-    public void setNumberOfCars(int numberOfCars){
-        this.numberOfCars = numberOfCars;
-    }
-
+    @Override
     public Make getMake() {
         return make;
     }
 
+    @Override
     public void setMake(Make make) {
         this.make = make;
     }
 
+    @Override
     public double getRate() {
         return rate;
     }
 
+    @Override
     public void setRate(double rate) {
         this.rate = rate;
     }
@@ -67,6 +78,7 @@ public class Car implements CarInterface {
      * Sets the availability calendar of the car.
      * @param availability 
      */
+    @Override
     public void setAvailability(Map<Month, boolean[]> availability){
     
     }
@@ -76,6 +88,7 @@ public class Car implements CarInterface {
      * 
      * @return 
      */
+    @Override
     public int getId(){
         return this.id;
     }
