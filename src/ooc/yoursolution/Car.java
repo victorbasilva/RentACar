@@ -1,6 +1,7 @@
 
 package ooc.yoursolution;
 
+import java.util.HashMap;
 import java.util.Map;
 import ooc.enums.Make;
 import ooc.enums.Month;
@@ -12,6 +13,8 @@ import ooc.enums.Month;
 public class Car implements CarInterface {
     private Make make;
     private double rate;
+    Map<Month, boolean[]> availabilityMap = new HashMap<>(); 
+    
     private boolean availability;
     private Month month;
     private int day;
@@ -26,6 +29,7 @@ public class Car implements CarInterface {
      */
     public Car(int id) {
         this.id = id;
+        this.createAvailability();
     }
    
     
@@ -39,7 +43,17 @@ public class Car implements CarInterface {
      */
     @Override
     public Map<Month, boolean[]> createAvailability(){
-        return null;
+        
+        for (Month value : Month.values()) {
+            boolean[] isAvailable = new boolean[value.getNumberOfDays()];
+            for(int i=0; i< isAvailable.length; i++){
+                isAvailable[i] = true;
+            }
+            this.availabilityMap.put(value,isAvailable);
+           
+        }
+        
+        return this.availabilityMap;
                 
     }
     
@@ -63,24 +77,24 @@ public class Car implements CarInterface {
         this.rate = rate;
     }
     /**
-     * Getter method for the make of this car.
+     * Getter method for the availability calendar of this car.
      * 
-     * @return the make of the car
+     * @return Map of availability
      */
-    
     @Override
     public Map<Month, boolean[]> getAvailability(){
-        return null;
+        return this.availabilityMap;
         
     }
     
     /**
      * Sets the availability calendar of the car.
+     * 
      * @param availability 
      */
     @Override
     public void setAvailability(Map<Month, boolean[]> availability){
-    
+        
     }
     
     /**
@@ -104,6 +118,9 @@ public class Car implements CarInterface {
      */
     @Override
     public boolean isAvailable(Month month, int day){
+        if(this.availabilityMap.containsKey(month)){
+            return this.availabilityMap.get(month)[day];
+        }
         return false;
     
     }

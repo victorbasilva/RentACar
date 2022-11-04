@@ -49,12 +49,13 @@ public class BookingSystem implements BookingSystemInterface {
               for(int i=1; i<=numberOfCars;i++){
                   Car newCar = new Car(i);
                   newCar.setRate(Double.parseDouble(rate));
+                  
                   switch(make){
-                    case "BMW": newCar.setMake(this.make.BMW);   
-                    case "TOYOTA": newCar.setMake(this.make.TOYOTA);
-                    case "FORD": newCar.setMake(this.make.FORD);
-                    case "FIAT": newCar.setMake(this.make.FIAT);
-                    case "CHEVROLET": newCar.setMake(this.make.CHEVROLET);
+                    case "BMW": newCar.setMake(this.make.BMW); break;  
+                    case "TOYOTA": newCar.setMake(this.make.TOYOTA); break;
+                    case "FORD": newCar.setMake(this.make.FORD); break;
+                    case "FIAT": newCar.setMake(this.make.FIAT); break;
+                    case "CHEVROLET": newCar.setMake(this.make.CHEVROLET); break;
                   }
                   cars.add(newCar);
               }

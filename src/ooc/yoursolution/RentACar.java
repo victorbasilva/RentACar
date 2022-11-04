@@ -24,34 +24,49 @@ import ooc.enums.Month;
     @Override
     public List<CarInterface> getCars() {
         return this.cars;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void setCars(List<CarInterface> cars) {
         this.cars = cars;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public String getName() {
         return this.name;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void setName(String name) {
         this.name = name;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // for each car
+        for(int i=0; i <this.cars.size();i++){
+            System.out.println(this.cars.get(i).getMake());
+            // find a make that is requested
+            if(this.cars.get(i).getMake() != make){
+                continue;
+            }
+            // check if car is available
+            if( this.cars.get(i).isAvailable(month, day)){
+                return true;
+            }
+            
+        }
+        return false;
+        
     }
 
     @Override
     public int getCarAvailable(Month month, int day, Make make, int lengthOfRent) {
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
