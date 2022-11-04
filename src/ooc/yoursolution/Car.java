@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ooc.yoursolution;
 
 import java.util.Map;
@@ -11,104 +7,100 @@ import ooc.enums.Month;
 
 /**
  *
- * @author gabrieleugenio
+ * @author Gabriel and Victor
  */
 public class Car implements CarInterface {
     private Make make;
     private double rate;
-    Month month;
-    String Brand;
-    String Model;
-    String Color;
-    int year ;
+    private boolean availability;
+    private Month month;
+    private int day;
+    private int numberOfCars;
     
-    @Override
-    public Map<Month, boolean[]> createAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
-       
+    private int id;
+   /**
+     * This method in in charge of creating the calendar of availability 
+     * of the car for the whole year. 
+     * The calendar should be a Map that uses the Month as the key, 
+     * and an array of boolean as its associated value.
+     * 
+     * @return Map of availability
+     */
+    public Map<Month, boolean[]> createAvailability(){
+                
+    }
+    
+    public void setNumberOfCars(int numberOfCars){
+        this.numberOfCars = numberOfCars;
     }
 
-    @Override
     public Make getMake() {
-        return this.make;
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return make;
     }
 
-    @Override
     public void setMake(Make make) {
         this.make = make;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public double getRate() {
-        return this.rate;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return rate;
     }
 
-    @Override
     public void setRate(double rate) {
         this.rate = rate;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public Map<Month, boolean[]> getAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setAvailability(Map<Month, boolean[]> availability) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isAvailable(Month month, int day) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean book(Month month, int day) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getBrand() {
-        return Brand;
-    }
-
-    public String getModel() {
-        return Model;
-    }
-
-    public String getColor() {
-        return Color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setBrand(String Brand) {
-        this.Brand = Brand;
-    }
-
-    public void setModel(String Model) {
-        this.Model = Model;
-    }
-
-    public void setColor(String Color) {
-        this.Color = Color;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+    /**
+     * Getter method for the make of this car.
+     * 
+     * @return the make of the car
+     */
+    
+    public Map<Month, boolean[]> getAvailability(){
+        
     }
     
+    /**
+     * Sets the availability calendar of the car.
+     * @param availability 
+     */
+    public void setAvailability(Map<Month, boolean[]> availability){
+    
+    }
+    
+    /**
+     * Getter method for the id of this car.
+     * 
+     * @return 
+     */
+    public int getId(){
+        return this.id;
+    }
+    
+    /**
+     * Returns whether or not the car is available on the given month and day. 
+     * Month is an Emum, day is an int within the limits of the number of days
+     * in a given month
+     * 
+     * @param month Month being checked
+     * @param day day being checked
+     * @return  true or false if it is available or not
+     */
+    public boolean isAvailable(Month month, int day){
+    
+    }
+    
+    /**
+     * Book a car on the given month and day. To book a car its availability 
+     * is changed to false on the given month and day. 
+     * This should return true or false if this change is successfully made.
+     * 
+     * @param month month to book
+     * @param day date to book
+     * @return true or false if the booking is completed
+     */
+    public boolean book(Month month, int day){
+    
+    }
     
     
 }

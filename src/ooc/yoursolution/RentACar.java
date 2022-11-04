@@ -13,7 +13,7 @@ import ooc.enums.Month;
  *
  * @author gabrieleugenio
  */
-abstract class RentACar implements RentACarInterface {
+    public class RentACar implements RentACarInterface {
     private List<CarInterface> cars;
     private String name;
     
