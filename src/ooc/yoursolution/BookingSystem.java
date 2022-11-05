@@ -16,8 +16,8 @@ import ooc.enums.Make;
  */
 public class BookingSystem implements BookingSystemInterface {
 
-    Make make; //Creted Enum make that contains car brands 
-    
+    private Make make; //Creted Enum make that contains car brands 
+    private int carId = 0;
     /**
      * Method to set up a Rent a car.
      * Will read file and take name of rent a car and
@@ -64,8 +64,10 @@ public class BookingSystem implements BookingSystemInterface {
               // for each car we need to create a new car and add it to rent a car store
               // for each car
               for(int i=1; i<=numberOfCars;i++){
+                  // increase carId by 1 for each car
+                  carId++;
                   // create new car with id 
-                  Car newCar = new Car(i);
+                  Car newCar = new Car(carId);
                   // set the rate for that car -- al cars odf same make have same rate
                   newCar.setRate(Double.parseDouble(rate));
                   // set make for a car based of what we read from file
