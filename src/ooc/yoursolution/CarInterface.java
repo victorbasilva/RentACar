@@ -14,8 +14,6 @@ import java.util.Map;
  */
 public interface CarInterface{
     
-    
-    
     /**
      * This method in in charge of creating the calendar of availability 
      * of the car for the whole year. 

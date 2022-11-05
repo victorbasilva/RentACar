@@ -1,7 +1,6 @@
 package ooc.yoursolution;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -17,20 +16,6 @@ public interface BookingSystemInterface {
      * @param in instance of the buffered reader class that has open the file
      * @return instance of the Rent-a-car class.
      * @throws IOException 
-     */
-    
-    
-    public RentACarInterface setupRentACar(BufferedReader in) throws IOException;
-
-    @Override
-    public String toString();
-
-    @Override
-    public boolean equals(Object obj);
-
-    @Override
-    public int hashCode();
-    
-    
-    
+     */    
+    public RentACarInterface setupRentACar(BufferedReader in) throws IOException;    
 }

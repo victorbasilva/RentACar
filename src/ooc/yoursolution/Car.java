@@ -14,12 +14,6 @@ public class Car implements CarInterface {
     private Make make;
     private double rate;
     Map<Month, boolean[]> availabilityMap = new HashMap<>(); 
-    
-    private boolean availability;
-    private Month month;
-    private int day;
-    
-    
     private int id;
 
     /**
@@ -29,10 +23,8 @@ public class Car implements CarInterface {
      */
     public Car(int id) {
         this.id = id;
-        this.createAvailability();
     }
    
-    
     /**
      * This method in in charge of creating the calendar of availability 
      * of the car for the whole year. 
@@ -40,42 +32,66 @@ public class Car implements CarInterface {
      * and an array of boolean as its associated value.
      * 
      * @return Map of availability
-     */
+    */
     @Override
     public Map<Month, boolean[]> createAvailability(){
-        
+        // for every month
         for (Month value : Month.values()) {
+            // create an array of availability booleans for number of days that month have
             boolean[] isAvailable = new boolean[value.getNumberOfDays()];
+            // for each day
             for(int i=0; i< isAvailable.length; i++){
+                // set that car is available (initially)
                 isAvailable[i] = true;
             }
+            // add array of booleans as value and month as key for a map
             this.availabilityMap.put(value,isAvailable);
-           
         }
-        
+        // return availability map
         return this.availabilityMap;
-                
     }
     
+    /**
+     * Getter method for the make of this car.
+     * 
+     * @return the make of the car
+     */
     @Override
     public Make getMake() {
-        return make;
+        return this.make;
     }
 
+    /**
+     * Sets the make of the car.
+     * 
+     * @param make 
+     */
     @Override
     public void setMake(Make make) {
         this.make = make;
     }
 
+    /**
+     * Getter method for the rate of this car.
+     * 
+     * @return rate of the car.
+     */
     @Override
     public double getRate() {
-        return rate;
+        return this.rate;
     }
 
+        
+    /**
+     * Sets the rate of the car.
+     * 
+     * @param rate 
+     */
     @Override
     public void setRate(double rate) {
         this.rate = rate;
     }
+    
     /**
      * Getter method for the availability calendar of this car.
      * 
@@ -84,7 +100,6 @@ public class Car implements CarInterface {
     @Override
     public Map<Month, boolean[]> getAvailability(){
         return this.availabilityMap;
-        
     }
     
     /**
@@ -94,7 +109,7 @@ public class Car implements CarInterface {
      */
     @Override
     public void setAvailability(Map<Month, boolean[]> availability){
-        
+        this.availabilityMap = availability;
     }
     
     /**
@@ -118,11 +133,13 @@ public class Car implements CarInterface {
      */
     @Override
     public boolean isAvailable(Month month, int day){
+        // if there is a month
         if(this.availabilityMap.containsKey(month)){
+            // find if car is available on day of the month (day is index in array and value is boolean)
             return this.availabilityMap.get(month)[day];
         }
+        // else return false
         return false;
-    
     }
     
     /**
@@ -136,9 +153,12 @@ public class Car implements CarInterface {
      */
     @Override
     public boolean book(Month month, int day){
+        // check first if is car available on day we are booking it for
+        if(this.isAvailable(month, day)){
+            //set the day in month to be anavailable            
+            this.availabilityMap.get(month)[day] = false;
+        }    
         return false;
-    
     }
-    
     
 }

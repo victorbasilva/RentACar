@@ -76,6 +76,8 @@ public class BookingSystem implements BookingSystemInterface {
                     case "FIAT": newCar.setMake(this.make.FIAT); break;
                     case "CHEVROLET": newCar.setMake(this.make.CHEVROLET); break;
                   }
+                  // create availability calendar for car
+                  newCar.createAvailability();
                   // add car to array list of cars that will be added to shop
                   cars.add(newCar);
               }
